@@ -105,3 +105,42 @@
 //       isClose = false
 
 // console.log(isChecked || !isClose);
+
+
+
+let answers = {
+    'film': 'chislo',
+    'film2': 'chislo2'
+};
+
+answers.film = prompt('какой фильм смотрели последним?', '');
+answers.chislo = prompt('какую оценку поставите?', '');
+answers.film2 = prompt('какой фильм смотрели последним?', '');
+answers.chislo2 = prompt('какую оценку поставите фильму', '');
+
+console.log(answers.film2 + ' ' + answers.chislo2);
+console.log(answers.film + ' ' + answers.chislo);
+
+
+
+
+
+
+// const arrObj = {
+//     a: 'a',
+//     '1': 'b',
+//     2: 'c'
+// }
+// const b = 'b';
+
+// arrObj.b = '1234';
+
+// console.log(arrObj ['b']);
+// console.log(arrObj.b);
+
+
+// answers[0] = prompt('как ваше имя?', '');
+// answers[1] = prompt('как ваша фамилия?', '');
+// answers[2] = prompt('сколько вам лет?', '');
+
+// console.log(typeof (answers));
