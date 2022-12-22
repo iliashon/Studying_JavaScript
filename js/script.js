@@ -48,17 +48,29 @@
 //  let arr = ['plum.png', 'orange.jpg', 6, 'apple.bmp', {}, []];
 //  console.log(arr[1]);  
 
+// const arr = {
+//     a: 'aa',
+//     b: 'ab',
+//     c: 'ac'
+// };
+// const ab = 'bb';
+
+// arr[ab] = '1';
+
+// console.log(arr);
+
+
 // const arrObj = {
 //     a: 'a',
 //     '1': 'b',
 //     2: 'c'
 // }
-// const b = 'b';
+// const b = 'boo';
 
-// arrObj.b = '1234';
+// arrObj[b] = '1234';
 
-// console.log(arrObj ['b']);
-// console.log(arrObj.b);
+// //console.log(arrObj ['b']);
+// console.log(arrObj);
 
 // alert('hello')
 
@@ -108,18 +120,18 @@
 
 
 
-let answers = {
-    'film': 'chislo',
-    'film2': 'chislo2'
-};
+// let answers = {
+//     'film': 'chislo',
+//     'film2': 'chislo2'
+// };
 
-answers.film = prompt('какой фильм смотрели последним?', '');
-answers.chislo = prompt('какую оценку поставите?', '');
-answers.film2 = prompt('какой фильм смотрели последним?', '');
-answers.chislo2 = prompt('какую оценку поставите фильму', '');
+// answers.film = prompt('какой фильм смотрели последним?', '');
+// answers.chislo = prompt('какую оценку поставите?', '');
+// answers.film2 = prompt('какой фильм смотрели последним?', '');
+// answers.chislo2 = prompt('какую оценку поставите фильму', '');
 
-console.log(answers.film2 + ' ' + answers.chislo2);
-console.log(answers.film + ' ' + answers.chislo);
+// console.log(answers.film2 + ' ' + answers.chislo2);
+// console.log(answers.film + ' ' + answers.chislo);
 
 
 
@@ -144,3 +156,114 @@ console.log(answers.film + ' ' + answers.chislo);
 // answers[2] = prompt('сколько вам лет?', '');
 
 // console.log(typeof (answers));
+
+// if (4 == 4) {
+//     console.log('Ok!');
+// } else {
+//     console.log('error!');
+     
+// }
+// const num = 50;
+
+// if (num < 49) {
+//     console.log('error');
+// } else if (num > 100) {
+//     console.log('много');
+// } else {
+//     console.log('ok');
+// }
+
+// (num === 50) ? console.log('ok') : console.log('error');
+
+// const num = 50;
+
+// switch (num) {
+//     case 49:
+//         console.log('неверно');
+//         break;
+//     case 100:
+//         console.log('неверно');
+//         break;
+//     case 51:
+//         console.log('в точку!');
+//         break;
+//     default:
+//         console.log('ничего не подошло');
+//         break;
+// }
+
+
+
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const nuggets = 2;
+ 
+// if (hamburger && cola || fries === 3 && nuggets) {
+//    console.log('Done!')
+// }
+
+// let num = 50;
+
+// while (num <= 55) {
+//     console.log(num);
+//     num++;
+// }
+
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num < 55);
+
+// let num = 50;
+
+for (let i = 1; i < 10; i++) {
+    if (i === 8){
+        // break;
+        continue;
+    }
+
+    console.log(i);
+}
+
+
+
+// console.log( NaN || 2 || undefined );
+
+
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+    for (let j = 0; j < 3; j++) {
+        console.log(j);
+}
+
+let result = '';
+const length = 7;
+
+for (let i = 1; i < length; i++) {
+
+    for (let )
+
+
+
+    result += '\n';
+}
+
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
