@@ -76,10 +76,32 @@
 
 // console.log(typeof (answers));
 
-const caregory = 'toys';
+// const caregory = 'toys';
 
-console.log(`htttps://someurl.com/${caregory}/5`);
+// console.log(`htttps://someurl.com/${caregory}/5`);
 
-const user = "ivan";
+// const user = "ivan";
 
-alert(`hello, ${user}`)
+// alert(`hello, ${user}`)
+
+// console.log('arr' + " - object");
+
+// let incr = 10,
+//     decr = 10;
+
+// // incr++;
+// // decr--;
+
+// console.log(++incr);
+// console.log(--decr);
+
+// console.log(5%2);
+// console.log(2*4 === 8);
+
+// &&
+// II 
+
+// const isChecked = false,
+//       isClose = false
+
+// console.log(isChecked || !isClose);
