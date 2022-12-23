@@ -219,51 +219,156 @@
 
 // let num = 50;
 
-for (let i = 1; i < 10; i++) {
-    if (i === 8){
-        // break;
-        continue;
-    }
+// for (let i = 20; i > 10; i--) {
+//     if (i === 13){
+//         break;
+//         co
+//     }
 
-    console.log(i);
-}
+//     console.log(i);
+// }
 
+// let i = 0;
+// while (i < 3) { // выводит 0, затем 1, затем 2
+//     console.log(i);
+//   i++;
+// }
 
+// let i = 0;
+// do {
+//   alert( i );
+//   i++;
+// } while (i < 3);
 
 // console.log( NaN || 2 || undefined );
 
-
-for (let i = 0; i < 3; i++) {
-    console.log(i);
-    for (let j = 0; j < 3; j++) {
-        console.log(j);
-}
-
-let result = '';
-const length = 7;
-
-for (let i = 1; i < length; i++) {
-
-    for (let )
+// for(let i = 5; i < 11; i++) {
+//     console.log(i);
+// }
 
 
 
-    result += '\n';
+// for (let i = 0; i < 3; i++) {
+//     console.log(i);
+//     for (let j = 0; j < 3; j++) {
+//         console.log(j);
+// };
+// }
+
+// let result = '';
+// const length = 7;
+
+// for (let i = 1; i < length; i++) {
+
+//     for (let j = 0; j < i; j++) {
+//         result += "*";
+//     }
+
+
+
+//     result += '\n';
+// }
+
+// console.log(result);
+
+// first: for (let i = 0; i < 3; i++) {
+//     console.log(`first level: ${i}`);
+//     for (let j = 0; j < 3; j++) {
+//         console.log(`second level: ${j}`);
+//         for (let k = 0; k < 5; k++) {
+//             if (k === 2) continue first;
+//             console.log(`third level: ${k}`);
+//         };
+//     };
+// }
+
+
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 1) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
+
+// let num = 2;
+
+// while (num <= 16) {
+//     if (num % 2 === 0){
+//         num++;
+//         continue;
+//     } else {
+//         console.log(num);
+//     } 
+//     num++;
+// }
+
+
+
+// for (let i = 2; i <= 10; i++) {
+//     if (i % 2 === 1) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
+
+
+
+// let num = 1;
+
+// while (num <= 15) {
+//     num++;
+//     if (num % 2 === 0){
+//         continue;
+//     } else {
+//         console.log(num);
+//     } 
+// }
+
+// const arrayOfNumbers = [];
+// for(let i = 5; i < 11; i++) {
+//     arrayOfNumbers[i - 5] = i;
+// }
+// console.log(arrayOfNumbers);
+
+// const arr = [3, 5, 8, 16, 20, 23, 50];
+// const result = [];
+
+//     // Пишем решение вот тут
+// result[0] = arr[0];
+// result[1] = arr[1];
+// result[2] = arr[2];
+// result[3] = arr[3];
+// result[4] = arr[4];
+// result[5] = arr[5];
+// result[6] = arr[6];
+// console.log(result);
+// console.log(arr);
+    
+    
+//     // Не трогаем
+//     return result;
+
+    // const answers = [];
+
+// answers[0] = prompt('как ваше имя?', '');
+// answers[1] = prompt('как ваша фамилия?', '');
+// answers[2] = prompt('сколько вам лет?', '');
+
+// console.log(typeof (answers));
+
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+// data[0] = 
+
+
+const arr = [3, 5, 8, 16, 20, 23, 50];
+const result = [];
+
+for (let i = 0; i < arr.length; i++) {
+    result[i] = arr[i];
 }
 
 console.log(result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
