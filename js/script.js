@@ -580,15 +580,17 @@
 
 let arr = [];
 for ( let i = 0; i < 15; i++ ) {
-    arr.push( Math.round( Math.random() * (-45) + 30 ));
+    arr.push( Math.round( Math.random() * (-45) ));
 }
 console.log(arr);
 
+let numMax = arr[0];
+let indMax = 0;
 for ( let i = 0; i < 15; i++) {
-    let num = arr[i];
-    if (arr[i] >= num){
-        continue;
-    } else {
-        console.log(arr[i]);
+    if (numMax < arr[i]){
+        numMax = arr[i];
+        indMax = i;
     }
 }
+console.log(numMax);
+console.log(indMax);
