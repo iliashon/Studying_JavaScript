@@ -352,23 +352,243 @@
 
     // const answers = [];
 
-// answers[0] = prompt('как ваше имя?', '');
-// answers[1] = prompt('как ваша фамилия?', '');
-// answers[2] = prompt('сколько вам лет?', '');
-
-// console.log(typeof (answers));
 
 // const data = [5, 10, 'Shopping', 20, 'Homework'];
+// for(let i = 0; i < data.length; i++){
+//     if (typeof(data[i]) === 'number') {
+//         data[i] = data[i] * 2;
+//     } else if (typeof(data[i]) === 'string') {
+//         data[i] = `${data[i]} - done`;
+//     }
+// }
+// console.log(data);
 
-// data[0] = 
 
 
-const arr = [3, 5, 8, 16, 20, 23, 50];
-const result = [];
+// const arr = [3, 5, 8, 16, 20, 23, 50];
+// const result = [];
 
-for (let i = 0; i < arr.length; i++) {
-    result[i] = arr[i];
+// for (let i = 0; i < arr.length; i++) {
+//     result[i] = arr[i];
+// }
+
+// console.log(result);
+
+
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+// const result = [];
+
+// for (let i = 1; i <= data.length; i++) {
+//     result[i - 1] = data[data.length - i]
+// }
+
+// console.log(result);
+
+
+// const lines = 5;
+// let result = '';
+
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 0; j < lines - i; j++) {
+//         result += " ";
+//     }
+//     for (let j = 0; j < 2 * i + 1; j++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
+
+// console.log(result)
+
+// const arr = [5, 2, 8, 3, 20, 14, 19];
+
+// arr.sort(function(a,b){ 
+//     return a - b;
+//   });
+// console.log(arr);
+
+// for (let i = 1; i arr.length; i++){
+//     if(arr[i]) 
+
+
+// }
+
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+// for(let i = 0; i < data.length; i++){
+//     if (typeof(data[i]) === 'number') {
+//         data[i] = data[i] * 2;
+//     } else if (typeof(data[i]) === 'string') {
+//         data[i] = `${data[i]} - done`;
+//     }
+// }
+// console.log(data);
+
+// let num = 20;
+
+
+// function showFirstMessege(text) {
+//     console.log(text);
+//     num = 20;
+// }
+
+// showFirstMessege("hello");
+// console.log(num);
+
+
+// const logger = function() {
+//     console.log("hello");
+// };
+// logger();
+
+// const calc = (a, b) => { return a + b; };
+
+
+// const usdCurr = 28;
+// const eurCurr = 32;
+
+// function convert (amount, curr) {
+//     console.log(curr * amount);
+// }
+
+// convert(500, usdCurr);
+// convert(500, eurCurr);
+
+// let arr = [3, 7, 5, 17, 9, 12];
+
+// for(let i = 0; i < arr.length / 2; i++){
+//     let num = arr[i];
+//     arr[i] = arr[5-i];
+//     arr[5-i] = num;
+//     console.log(arr);
+// }
+
+// let i = 0;
+
+// let num = arr[i];
+// arr[i] = arr[5-i];
+// arr[5-i] = num;
+
+
+// num = arr[1];
+// arr[1] = arr[4];
+// arr[4] = num;
+// num = arr[3];
+// arr[3] = arr[2];
+// arr[2] = num;
+
+// console.log(arr);
+
+// for(let i = 5; i < 0; i--) {
+//     arr = [i];
+
+// }
+// console.log(arr);
+
+// console.log(min);
+// console.log(max);
+
+
+// 1. Введите с клавиатуры в массив пять целочисленных значений.
+//  Выведите их в одну строку через запятую. Получите для массива среднее арифметическое.
+// let arr = [2, 4, 6, 8, 10];
+// let num = 0;
+
+// for(let i = 0; i < arr.length; i++){
+//     num += arr[i];
+// }
+// num = num / arr.length;
+// console.log(num);
+
+// 2. Введите с клавиатуры пять целочисленных элементов массива X.
+// Выведите на экран значения квадратов каждого из элементов массива.
+// let arr = [2, 4, 6, 8, 10]; 
+
+// for(let i = 0; i < arr.length; i++){
+//     arr[i] *= arr[i];
+// }
+// console.log(arr);
+
+// 3. Создайте массив из пяти фамилий и 
+// выведите их на экран столбиком, начиная с последней.
+// let arr = ["ilya", "alex", "marina", "anton", "andrei"];
+// let result = '';
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     result += arr[i];
+//     result += " ";
+//     result += "\n";
+//     }
+// console.log(result);
+
+// 4. Создайте массив из пяти фамилий и выведите их на экран те из них,
+// которые начинаются с определенной буквы, которая вводится с клавиатуры.
+// let arr = ["ilya", "alex", "marina", "anton", "andrei"];
+
+// const letter = prompt('Имя начинающееся на какую букву вас интересует?');
+
+// for(let i = 0; i < arr.length; i++){
+//     if (letter === arr[i][0]){
+//         console.log(arr[i]);
+//     }
+// }
+
+// 5. Создайте массив А[1..7] с помощью генератора случайных чисел и
+//  выведите его на экран. Увеличьте все его элементы в 2 раза.
+// let arr = [];
+// for ( let i = 0; i < 7; i++ ) {
+//     arr.push( Math.round( Math.random() * 100 ));
+// }
+// console.log(arr);
+
+// for ( let i = 0; i < 7; i++ ){
+//     arr[i] *= 2;
+// }
+// console.log(arr);
+
+// 6. Создайте массив А[1..8] с помощью генератора случайных чисел
+//  с элементами от –10 до 10 и выведите его на экран. 
+//  Подсчитайте количество отрицательных элементов массива.
+// let arr = [];
+// for ( let i = 0; i < 8; i++ ) {
+//     arr.push( Math.round( Math.random() * (-20) + 10 ));
+// }
+// console.log(arr);
+// for (let i = 0; i < 8; i++ ){
+//     if(arr[i] < 0){
+//         console.log(arr[i]);
+//     }
+// }
+
+// 7. Создайте массив А[1..12] с помощью генератора случайных чисел с
+//  элементами от –20 до 10 и выведите его на экран. Замените
+//   все отрицательные элементы массива числом 0.
+// let arr = [];
+// for ( let i = 0; i < 12; i++ ) {
+//     arr.push( Math.round( Math.random() * (-30) + 10 ));
+// }
+// console.log(arr);
+// for (let i = 0; i < 12; i++ ){
+//     if(arr[i] < 0){
+//         arr[i] = 0;
+//     }
+// }
+// console.log(arr);
+
+// 8. Создайте целочисленный массив А[1..15] с помощью генератора
+//  случайных чисел с элементами от –15 до 30 и выведите его на экран.
+//   Определите самый большой элемент массива и его индекс.
+
+let arr = [];
+for ( let i = 0; i < 15; i++ ) {
+    arr.push( Math.round( Math.random() * (-45) + 30 ));
 }
+console.log(arr);
 
-console.log(result);
-        
+for ( let i = 0; i < 15; i++) {
+    let num = arr[i];
+    if (arr[i] >= num){
+        continue;
+    } else {
+        console.log(arr[i]);
+    }
+}
