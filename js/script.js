@@ -577,20 +577,260 @@
 // 8. Создайте целочисленный массив А[1..15] с помощью генератора
 //  случайных чисел с элементами от –15 до 30 и выведите его на экран.
 //   Определите самый большой элемент массива и его индекс.
+// let arr = [];
+// for ( let i = 0; i < 15; i++ ) {
+//     arr.push( Math.round( Math.random() * (-45) ));
+// }
+// console.log(arr);
 
-let arr = [];
-for ( let i = 0; i < 15; i++ ) {
-    arr.push( Math.round( Math.random() * (-45) ));
-}
-console.log(arr);
+// let numMax = arr[0];
+// let indMax = 0;
+// for ( let i = 0; i < 15; i++) {
+//     if (numMax < arr[i]){
+//         numMax = arr[i];
+//         indMax = i;
+//     }
+// }
+// console.log(numMax);
+// console.log(indMax);
 
-let numMax = arr[0];
-let indMax = 0;
-for ( let i = 0; i < 15; i++) {
-    if (numMax < arr[i]){
-        numMax = arr[i];
-        indMax = i;
-    }
-}
-console.log(numMax);
-console.log(indMax);
+// 9. С 8 до 20 часов температура воздуха измерялась ежечасно.
+// Известно, что в течение этого времени температура понижалась.
+// Определите, в котором часу была впервые отмечена отрицательная
+// температура.
+// let temperature = [8, 5, 3, 10, 12, 6, 5, -4, -7, -2, -7, -10];
+// let timesOfDay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+// for (let i = 0; i < 12; i++){
+//     if (temperature[i] < 0){
+//         console.log(temperature[i] + ' ' + timesOfDay[i]);
+//         break;
+//     }
+// }
+
+// 10. Данные о температуре воздуха за декаду ноября хранятся в массиве.
+// Определить, сколько раз температура опускалась ниже –10 градусов.
+// let temperature = [8, 5, 3, 10, 12, 6, 5, -14, -17, -2];
+// let amount = 0;
+
+// for (let i = 0; i < 10; i++){
+//     if (temperature[i] < -10){
+//         amount++;
+//     }
+// }
+// console.log(amount);
+
+// 11. Данные о температуре воды на Черноморском побережье за декаду
+//  сентября хранятся в массиве. Определить, сколько за это время было
+//   дней, пригодных для купания.
+// let temperature = [8, 15, 3, 20, 12, 28, 5, -14, 32, -2];
+// let amount = 0;
+
+// for (let i = 0; i < 10; i++){
+//     if (temperature[i] >= 20){
+//         amount++;
+//     }
+// }
+// console.log(amount);
+
+// 12. Данные о температуре воздуха и количестве осадков за декаду
+//  апреля хранятся в массивах. Определить количество осадков,
+//   выпавших в виде дождя и в виде снега за эту декаду.
+// let temperature = [8, 15, 3, 20, 12, 28, 5, -14, 32, -2];
+// let precipitation = [2.2, 7.1, 1, 3, 1.9, 2.6, 0.8, 1.7, 4.6, 1.5];
+// let snow = 0;
+// let rain = 0;
+
+// for (let i = 0; i < 10; i++){
+//     if (temperature[i] > 0){
+//         rain += precipitation[i];
+//     } else {
+//         snow += precipitation[i];
+//     }
+// }
+// console.log(snow);
+// console.log(rain);
+
+// 13. Данные о температуре воздуха за декаду декабря хранятся в массиве.
+//  Определить, сколько раз температура была выше средней за эту декаду..
+// let temperature = [8, 15, 3, 20, 12, 28, 5, -14, 32, -2];
+// let medium = 0;
+// let amount = 0;
+
+// for (let i = 0; i < 10; i++){
+//     medium += temperature[i];
+// }
+
+// medium /= temperature.length;
+
+// for (let i = 0; i < 10; i++){
+//     if (temperature[i] > medium){
+//         amount++;
+//     }
+// }
+
+// console.log(medium);
+// console.log(amount);
+
+// 14. Данные о направлении ветра (северный, южный, восточный, западный) 
+// и силе ветра за декаду ноября хранятся в массиве. Определить,
+//  сколько дней дул южный ветер с силой, превышающей 8 м/с.
+// let direction = ["Северный", "Южный", "Восточный", "Западный", "Восточный",
+// "Южный", "Южный", "Западный", "Южный", "Северный"];
+// let precipitation = [2.2, 9.1, 1, 3, 1.9, 15.6, 0.8, 10.7, 4.6, 1.5];
+// let amount = 0;
+
+// for (let i = 0; i < 10; i++){
+//     if(direction[i] === "Южный" && precipitation[i] > 8){
+//         amount++;
+//     }
+// }
+
+// console.log(amount);
+
+// 15. Создайте массив из 15 целочисленных элементов и определите
+//  среди них минимальное значение.
+// let arr = [];
+// for ( let i = 0; i < 15; i++ ) {
+//     arr.push( Math.round( Math.random() * 50 ));
+// }
+// console.log(arr);
+
+// let numMin = arr[0];
+// for ( let i = 0; i < 15; i++) {
+//     if (numMin > arr[i]){
+//         numMin = arr[i];
+//     }
+// }
+// console.log(numMin);
+
+// 16. Сформируйте линейный массив вещественных чисел,
+//  элементы которого являются расстояниями, пройденными телом при
+//   свободном падении на землю за 1, 2, … , 10 с.
+// (формула расстояния: h=(gt2)/2, где g=9,8)
+// let distance = [];
+// const g = 9.81;
+
+// for(let i = 0; i < 10; i++){
+//     distance.push((g * (i+1) ** 2) / 2);
+// }
+
+// console.log(distance);
+
+// 17. Дан линейный массив целых чисел. Проверьте, является
+//  ли он упорядоченным по убыванию.
+// let arr = [10, 9, 8, 7, 6, 5, 8, 3, 2, 1];
+// let num = arr[0];
+
+// for (let i = 1; i < arr.length; i++){
+//     if (num > arr[i]){
+//         num = arr[i];
+//     } else if (num < arr[i]){
+//         console.log('error');
+//         break;
+//     }
+// }  
+
+// 18. Найти сумму положительных элементов линейного массива целых чисел.
+//  Размерность массива – 10. Заполнение массива осуществить с клавиатуры.
+// let arr = [];
+// let sum = 0;
+
+// for (let i = 0; i < 10; i++){
+//     const meaning = +prompt('Введите значение 0т -10 до 20');
+
+//     if(meaning != null && meaning != '' && meaning < 20 && meaning > -10){
+//         arr.push(meaning);
+//     } else{
+//         alert('Ошибка, Введите значение согласно требованию');
+//         i--;
+//     }
+// }
+// console.log(arr);
+
+// for (let i = 0; i < 10; i++){
+//     if(arr[i] > 0){
+//         sum += arr[i] ;
+//     }
+// }
+// console.log(sum);
+
+// 19. Найти сумму четных элементов массива целых чисел. 
+// Размерность массива – 20. Заполнение массива осуществить
+//  случайными числами от 100 до 200.
+// let arr = [];
+// let sum = 0;
+// for ( let i = 0; i < 20; i++ ) {
+//     arr.push( Math.round( Math.random() * (100 - 200) +200  ));
+// }
+// console.log(arr);
+
+// for ( let i = 0; i < arr.length; i++){
+//     if (arr[i] % 2 === 0){
+//         sum += arr[i];
+//     }
+// }
+// console.log(sum);
+
+// 20. Найти произведение элементов массива целых чисел,
+//  которые кратны 7. Размерность массива – 15. Заполнение 
+//  массива осуществить случайными числами от 10 до 50.
+// let arr = [];
+// let work = 1;
+// for ( let i = 0; i < 15; i++ ) {
+//     arr.push( Math.round( Math.random() * (10 - 50) +50  ));
+// }
+// console.log(arr);
+
+// for ( let i = 0; i < arr.length; i++){
+//     if (arr[i] % 7 === 0){
+//         work *= arr[i];
+//     } 
+// }
+// console.log(work);
+
+// 30. Рассортируйте заданный линейный массив по возрастанию.
+// let item = [8, 15, 3, 20, 12, 28, 5, -14, 12, -2];
+
+// for (let i=0; i<item.length; i++) {
+//     for (let j=i; j<item.length; j++) {
+//         if (item[i] > item[j]) {
+//         let t = item[i];
+//         item[i] = item[j];
+//         item[j] = t;
+//       }
+//     }
+//   }
+//   console.log(item);
+
+// 65. Дан целочисленный линейный массив из 10 элементов. Найдите
+//  наименьшее число K элементов, которое нужно исключить из 
+//  последовательности A[1],A[2],…,A[10], чтобы осталась возрастающая 
+//  последовательность.
+// ----------------
+// let arr = [8, 15, 2, 3, 20, 4, 5];
+// let num = arr[0];
+// let amount = 0;
+
+// for (let i = 1; i < arr.length; i++){
+//     if (num < arr[i]){
+//         num = arr[i];
+//     } else if (num > arr[i]){
+//         amount++;
+//     }
+// }  
+// console.log(amount);
+
+// 27. Задача на функции
+
+// function sayHello(name) {
+//     let phrase = 'привет';
+//     console.log(phrase + ', ' + name);
+// }
+// sayHello('ilya');
+
+// function returnNeighboringNumbers(num) {
+//     return [num - 1, num, num + 1];
+// }
+// console.log(returnNeighboringNumbers);
+
