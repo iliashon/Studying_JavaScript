@@ -834,3 +834,121 @@
 // }
 // console.log(returnNeighboringNumbers);
 
+// task №1
+// function returnNumber(first, second){
+//     if(first % 2 === 0 && second % 2 === 0) {
+//         return (first * second);
+//     } else if (first % 2 === 1 && second % 2 === 1){
+//         return (first + second);
+//     } else if (first % 2 === 0 && second % 2 === 1){
+//         return (second);
+//     } else if (first % 2 === 1 && second % 2 === 0){
+//         return (first);
+//     }
+// }
+// while(true){
+//     let firstUserNumber = +prompt('Первое число', ''),
+//     secondUserNumber = +prompt('Второе число', '');
+// console.log(returnNumber(firstUserNumber, secondUserNumber));
+// }
+
+// task№2
+// function returnNumber(firstVertexX, firstVertexY, secondVertexX, secondVertexY,
+//      thirdsVertexX, thirdsVertexY, fourthVertexX, fourthVertexY){
+//     if((firstVertexY + secondVertexY) === (fourthVertexY + thirdsVertexY) && 
+//        (firstVertexX + fourthVertexX) === (secondVertexX + thirdsVertexX) &&
+//        (firstVertexX + fourthVertexX) === (fourthVertexY + thirdsVertexY)) {
+//         return ('Это квадрат');
+//     }  else if ((firstVertexY + secondVertexY) === (fourthVertexY + thirdsVertexY) && 
+//                 (firstVertexX + fourthVertexX) === (secondVertexX + thirdsVertexX) &&
+//                 (firstVertexX + fourthVertexX) !== (fourthVertexY + thirdsVertexY)){
+//                 return ('Это прямоугольник');
+//     }  else if ((firstVertexY + secondVertexY) !== (fourthVertexY + thirdsVertexY)
+//  || (firstVertexX + fourthVertexX) !== (secondVertexX + thirdsVertexX)){
+//         return ('Это не прямоугольник и не квадрат');
+//     } 
+// }
+//     let firstVertexX = +prompt('Первая вершина X', ''),
+//         firstVertexY = +prompt('Первая вершина Y', ''),
+//         secondVertexX = +prompt('Вторая вершина X', ''),
+//         secondVertexY = +prompt('Вторая вершина Y', ''),
+//         thirdsVertexX = +prompt('Третья вершина X', ''),
+//         thirdsVertexY = +prompt('Третья вершина Y', ''),
+//         fourthVertexX = +prompt('Четвертая вершина X', ''),
+//         fourthVertexY = +prompt('Четвертая вершина Y', '');
+//     console.log(returnNumber(firstVertexX, firstVertexY, secondVertexX, secondVertexY,
+//      thirdsVertexX, thirdsVertexY, fourthVertexX, fourthVertexY));
+
+
+// 1. Написать функцию, которая принимает два числа
+//  и возращает результат их умножения
+// function work(firstNumber, secondNumber = 0){
+//     return(firstNumber * secondNumber);
+// }
+// let num1 = prompt('Укажите число'),
+//     num2 = prompt('Укажите второе число');
+// console.log(work(num1, num2));
+
+// 2. Написать функцию, которой передаем, имя, фамилия и возраст,
+//  и получаем строку "Привет Иван Петров с возрастом 17 лет" 
+//  (только здесь данные, которые были переданы в функцию)
+// function nameAndAge (name, surname, age){
+//     return(`Привет ${name} ${surname} с возрастом ${age}`);
+// }
+// let user = prompt('Как вас зовут?'),
+//     surname = prompt('Какая у вас фамилия?'),
+//     age = prompt('Сколько вам лет?');
+// console.log(nameAndAge(user, surname, age));
+
+// 3. Написать функцию, которая принимает пол человека ('M','F') 
+// в виде строки, результат функции возвращает строку "Ваш пол мужской" 
+// (или женский) или же "Ваш пол не опеределен"
+// function genderPerson(sex){
+//     if (sex === 'M'){
+//         return (`Ваш пол мужской`);
+//     } else if (sex === 'F'){
+//         return (`Ваш пол женский`);
+//     } else {
+//         return (`Ваш пол не определен`);
+//     }
+// }
+// let sex = prompt('Укажите ваш пол M или F', 'M - F');
+// console.log(genderPerson(sex.trim()));
+
+// 4. Сделайте функцию, которая принимает параметром число от 1 до 7,
+//  а возвращает день недели на русском языке.
+// function dayWeeks(dayNum){
+//     const day = ['Понедельник', 'Вторник', 'Среда', 'Четверг',
+//                  'Пятница', 'Суббота', 'Воскресенье'];
+//     if (dayNum > 0 && dayNum < 8) {
+//         return (day[dayNum - 1]);
+//     } else {
+//         return ('Неверно введено число');
+//     }
+// }
+// let dayNum = +prompt('Введите чсило от 1 до 7', '1 - 7');
+// console.log(dayWeeks(dayNum));
+
+// 5. Написать функцию, которая принимает строку (в этом тексте
+// 3-5 предложений), верните каждое первое слово в каждом
+// предложении, через запятую.
+
+// 6. Написать функцию, которой передаем имя, и она возраващает приветствие в
+//  зависимости от времени суток (Доброе утро\день\вечер\ночи Иван)
+// function timesDay (hours, userName){
+//     if (hours >= 0 && hours < 6){
+//         return console.log(`Доброй ночи ${userName}`);
+//     } else if (hours >= 6 && hours < 12){
+//         return console.log(`Доброе утро ${userName}`);
+//     } else if (hours >= 12 && hours < 18){
+//         return console.log(`Добрый день ${userName}`);
+//     } else if (hours >= 18 && hours < 24){
+//         return console.log(`Добрый вечер ${userName}`)
+//     } else {
+//         return console.log(`Вы инопрешеленец ${userName}`);
+//     }
+// }
+// let date = new Date();
+// let hours = date.getHours();
+// let userName = prompt('Как вас зовут?');
+// console.log(timesDay(hours, userName));
