@@ -932,7 +932,28 @@
 // 5. Написать функцию, которая принимает строку (в этом тексте
 // 3-5 предложений), верните каждое первое слово в каждом
 // предложении, через запятую.
+// function returnFirstsWords(offers){
+//     let isFirstWord = true;
+//     let isEnd = false;
+//     let firstsWords = '';
+//     for (let i = 0; i < offers.length; i++){
+//         if (isFirstWord === true && offers[i] !== ' '){
+//             firstsWords += offers[i];
+//             isEnd = false;
+//         } else if (offers[i] === ' ' && isEnd === false){
+//             isFirstWord = false;
+//         } else if (offers[i] === '.'){
+//             isEnd = true;
+//             isFirstWord = true;
+//             firstsWords += ', ';
+//         } 
+//     }
+//     return firstsWords;
+// }
+// let offers = prompt('Введите несколько предложений', '');
+// console.log(returnFirstsWords(offers));
 
+// Ильяривет.лексейривет.ндрейривет
 // 6. Написать функцию, которой передаем имя, и она возраващает приветствие в
 //  зависимости от времени суток (Доброе утро\день\вечер\ночи Иван)
 // function timesDay (hours, userName){
@@ -952,3 +973,185 @@
 // let hours = date.getHours();
 // let userName = prompt('Как вас зовут?');
 // console.log(timesDay(hours, userName));
+
+// 7. Вывести числа от 1 до 100 в столбец. К каждой цифре подписать состояние возраста
+//  (1-17 ребенок, 18-30 - молодой, 30-55 - зрелый, от 55 - старый). Например. 33 - зрелый
+// function ageStatus(userAge){
+//     while (userAge) {
+//         if (userAge >= 1 && userAge <= 17){
+//             return(`${userAge} и он ребенок`);
+//         } else if (userAge >= 18 && userAge <= 30){
+//             return(`${userAge} и он молодой`);
+//         } else if (userAge > 30 && userAge <= 55){
+//             return(`${userAge} и он зрелый`);
+//         } else if (userAge > 55 && userAge <= 100){
+//             return(`${userAge} и он старый`);
+//         }
+//     }
+// }
+
+// Создай новую функцию, в которую передаешь имя и возраст человека и получаешь сообщение
+//  (Иван имеет возраст 44 и он зрелый). А также вызови внутри своей функции, функцию
+//   из прошлого задания
+
+// function nameAgeStatus(userName){
+//     return(`${userName} имеет возраст ${ageStatus(userAge)}`);
+// }
+
+// let userAge = prompt('Сколько вам лет?');
+// let userName = prompt('Как вас зовут?');
+// console.log(nameAgeStatus(userName));
+
+// 8. Сделай функцию, которая принимает массив любых целых чисел, которая возращает истинну,
+//  если все элементы четные, если бы хотя бы один элемент не четный, то false.
+// function evenOrOdd(num){
+//     for (let i = 0; i < num.length; i++){
+//         if (num[i] % 2 === 1){
+//             return(false);
+//         }
+//     }
+//     return(true);
+// }
+
+// let arr = [2, 4, 6, 8, 10];
+// console.log(evenOrOdd(arr));
+
+// 9. Сделай функцию, которая принимает массив любых целых чисел, которая возращает истинну,
+//  если хотя бы один элемент нечетный, если все четные, то false.
+// function evenOrOdd(num){
+//     for (let i = 0; i < num.length; i++){
+//         if (num[i] % 2 === 1){
+//             return(true);
+//         }
+//     }
+//     return(false);
+// }
+
+// let arr = [2, 4, 6, 8, 10];
+// console.log(evenOrOdd(arr));
+
+// 10. Сделай функцию, которая принимает массив любых целых чисел, которая возращает
+//  новый массив, где все элементы кратны пяти. ([1,2,5,12,15,21] вернет [5,15])
+// function evenOrOdd(num){
+//     let array = [];
+//     for (let i = 0; i < num.length; i++){
+//         if (num[i] % 5 === 0){
+//             array.push(num[i]);
+//         }
+//     }
+//     return(array);
+// }
+
+// let arr = [2, 4, 5, 8, 10];
+// console.log(evenOrOdd(arr));
+
+// 11 .Написать функцию, которая принимает массив чисел, например [1,2,3,4,5] и функция
+//  возращает среднее арифметическое, (округлить результат до десятых)
+// function evenOrOdd(num){
+//     let saner = 0;
+//     for (let i = 0; i < num.length; i++){
+//         saner += num[i];
+//     }
+//     saner = saner / num.length;
+//     return(saner.toFixed(1));
+// }
+
+// let arr = [2, 4, 5, 8, 10];
+// console.log(evenOrOdd(arr));
+
+
+// 12. У нас есть объект, в котором хранятся зарплаты нашей команды:
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// }
+// Напишите код для суммирования всех зарплат и сохраните результат в переменной
+//  sum. Должно получиться 390.
+// Если объект salaries пуст, то результат должен быть 0.
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// };
+
+// function totalSalary(obj){
+//     let sum = 0;
+//     for (let key in obj){
+//         sum += obj[key];
+//     }
+//     return(sum);
+// }
+
+// console.log(totalSalary(salaries));
+
+// 13. Создайте функцию multiplyNumeric(obj), которая умножает все
+//  числовые свойства объекта obj на 2.
+// Например:
+// // до вызова функции
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+// multiplyNumeric(menu);
+// // после вызова функции
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: "My menu"
+// };
+// Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую
+//  изменять объект.
+// P.S. Используйте typeof для проверки, что значение свойства числовое.
+// let menu = {
+//       width: 200,
+//       height: 300,
+//       title: "My menu"
+//     };
+
+// function multiplyNumeric(obj){
+//     for (let key in obj){
+//         if (typeof obj[key] == 'number'){
+//             obj[key] *= 2;
+//         }
+//     }
+// }
+// multiplyNumeric(menu);
+// console.log(menu);
+
+// 14. Задача на поиск номера купе по месту
+// function searchNomberCoupe(place){
+//     if (place >= 1 && place <=4){
+//         return(1);
+//     } else if (place >= 5 && place <=8){
+//         return(2);
+//     } else if (place >= 9 && place <=12){
+//         return(3);
+//     } else if (place >= 13 && place <=16){
+//         return(4);
+//     } else if (place >= 17 && place <=20){
+//         return(5);
+//     } else if (place >= 21 && place <=24){
+//         return(6);
+//     } else if (place >= 25 && place <=28){
+//         return(7);
+//     } else if (place >= 29 && place <=32){
+//         return(8);
+//     } else if (place >= 33 && place <=36){
+//         return(9);
+//     } else if (place <= 0 || place >= 37){
+//         return('Таких мест в вагоне не существует');
+//     } else {
+//         return('Ошибка. Проверьте правильность введенного номера места');
+//     }
+// }
+
+// let userPlace = prompt('Какое у вас метсо?');
+// console.log(searchNomberCoupe(userPlace));
+
+// 15. Создайте функцию, которая будет вычислять объем и площадь полной поверхности куба
+//  (тоже базовая математика, иногда используется в создании анимаций). Эта функция
+//   принимает в себя целое число со значением длины ребра куба. Ответ выведите в формате
+//    строки, который изображен в примерах.
+
