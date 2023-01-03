@@ -1154,4 +1154,113 @@
 //  (тоже базовая математика, иногда используется в создании анимаций). Эта функция
 //   принимает в себя целое число со значением длины ребра куба. Ответ выведите в формате
 //    строки, который изображен в примерах.
+// function calc(edge){
+//     let volumeSquare = {
+//         volume: 0,
+//         square: 0,
+//         error: false
+//     };
+//     if (edge > 0 && edge % 1 == 0){
+//         volumeSquare.volume = edge * edge * edge;
+//         volumeSquare.square = 6 * edge * edge;
+//     } else {
+//         volumeSquare.error = true;
+//     }
+//     return(volumeSquare);
+// }
 
+// let ribLength = prompt('Введите целое число со значением длины ребра куба', '');
+
+// let volumeSquareExternal = calc(ribLength);
+// if (volumeSquareExternal.error === true){
+//     console.log('При вычислении произошла ошибка');
+// } else {
+//     console.log(`Объем куба: ${volumeSquareExternal.volume},  
+//     площадь всей поверхности: ${volumeSquareExternal.square}`);
+// }
+
+
+// 16. Создайте функцию, которая принимает в себя целое число минут и возвращает время
+//  в нужном формате строки. (Смотри пример). Обратите внимание на окончание слова
+//   "час" - оно меняется в зависимости от цифры. Если вместо аргумента приходит не
+//    число, дробное или отрицательное число - функция возвращает строку 
+//    "Ошибка, проверьте данные"
+// function getTimeFromMinutes(userTimeMinutes) {
+//     let objTime = {
+//         hour: 0,
+//         minute: 0,
+//         error: false
+//     };
+//     if (userTimeMinutes >= 0 && userTimeMinutes < 600){
+//         objTime.hour = Math.floor(userTimeMinutes / 60);
+//         objTime.minute = userTimeMinutes % 60;
+//     } else {
+//         objTime.error = true;
+//     }
+//     return(objTime);
+// }
+
+// let userTimeMinutes = prompt('Введите количество минут');
+
+// let getTimeFromMinutesExternal = getTimeFromMinutes(userTimeMinutes);
+
+// if (getTimeFromMinutes.error === true){
+//     console.log('Ошибка, проверьте данные');
+// } else {
+//     console.log(`Это ${getTimeFromMinutesExternal.hour} часа и ${getTimeFromMinutesExternal.minute} минут`);
+// }
+
+// 17. Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее
+//  из них. Если один из аргументов не является числом или их меньше 4 - 
+//  возвращается 0. Дробные числа разрешены.
+// function findMaxNumber(a, b, c, d) {
+//     if (typeof(a) !== 'number' ||
+//         typeof(b) !== 'number' ||
+//         typeof(c) !== 'number' ||
+//         typeof(d) !== 'number'){
+//             return 0;
+//         } else {
+//             return Math.max(a, b, c, d);
+//         }
+// }
+// console.log(findMaxNumber(3, 9, 5, 6));
+
+// 18. ***Создайте функцию, которая будет принимать в себя один аргумент-целое положительное
+//  число. Она должна возвращать строку, в которой будут через пробел выведены числа 
+//  Фибоначчи. Причем, их количество должно быть равно переданному аргументу.
+
+// Если переданный аргумент не число - вернуть пустую строку. Решать без применения рекурсии.
+
+function fib(amount){
+    let fibonache = '';
+    let fibonacheNum = 0;
+    if (typeof(amount) !== 'number' && amount < 1){
+        return("");
+    } else {
+        fibonache += '0 1';
+        for (let i = 0; i < amount; i++){
+            if(fibonache[i] !== ' ' && fibonache[i + 2] !== ' '){
+                fibonacheNum = fibonache[i] + fibonache[i + 2];
+                fibonache += fibonacheNum;
+            } else{
+                continue;
+            }
+        }
+    }
+    return(fibonache);
+
+
+    
+}
+
+console.log(fib(4));
+
+// let temperature = [8, 5, 3, 10, 12, 6, 5, -4, -7, -2, -7, -10];
+// let timesOfDay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+// for (let i = 0; i < 12; i++){
+//     if (temperature[i] < 0){
+//         console.log(temperature[i] + ' ' + timesOfDay[i]);
+//         break;
+//     }
+// }
