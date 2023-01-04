@@ -1228,39 +1228,295 @@
 // 18. ***Создайте функцию, которая будет принимать в себя один аргумент-целое положительное
 //  число. Она должна возвращать строку, в которой будут через пробел выведены числа 
 //  Фибоначчи. Причем, их количество должно быть равно переданному аргументу.
-
 // Если переданный аргумент не число - вернуть пустую строку. Решать без применения рекурсии.
+// function fib(amount){
+//     let fibonacheString = '';
+//     let fibonacheNumEnd = 0;
+//     let fibonacheNumStart = 1;
+//     let finonacheNumSum = 0;
+//     if (typeof(amount) !== 'number' && amount < 1){
+//         return("");
+//     } else if(amount === 1){
+//         fibonacheString += `0`;
+//     } else {
+//         fibonacheString += `0 1`;
+//     }
+//     for(let i = 2; i < amount; i++){
+//         finonacheNumSum = fibonacheNumEnd + fibonacheNumStart;
+//         fibonacheString += (` ${finonacheNumSum}`);
+//         fibonacheNumEnd = fibonacheNumStart;
+//         fibonacheNumStart = finonacheNumSum;
+//     }
+//     return(fibonacheString);
+// }
+// console.log(fib(10));
 
-function fib(amount){
-    let fibonache = '';
-    let fibonacheNum = 0;
-    if (typeof(amount) !== 'number' && amount < 1){
-        return("");
-    } else {
-        fibonache += '0 1';
-        for (let i = 0; i < amount; i++){
-            if(fibonache[i] !== ' ' && fibonache[i + 2] !== ' '){
-                fibonacheNum = fibonache[i] + fibonache[i + 2];
-                fibonache += fibonacheNum;
-            } else{
-                continue;
-            }
-        }
+// Метод Trim
+// const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+
+// Callback- функции позволяет быть уверенным что код не начнет работать до момента 
+// пока не сработает эта функция 
+// function first(){
+//     // do something
+//     setTimeout(function(){
+//         console.log(1);
+//     }, 500);
+// }
+
+// function second(){
+//     console.log(2);
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback){
+//     console.log(`Я учу: ${lang}`);
+//     callback();
+// }
+// //Анонимная функция
+// learnJS('JavaScript', function(){
+//     console.log('Я прошел этот урок');
+// });
+
+// Объекты, деструктуризация объектов (ES6), Метод перебора объекта с помощью (for key in)
+// Метод Object.keys(options).length для получения количества свойств в объекте
+
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function(){
+//         console.log("test");
+//     }
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;
+
+// console.log(border);
+
+// console.log(Object.keys(options).length);
+
+// console.log(options["colors"]["border"]);
+
+// delete options.name;
+
+// console.log(options);
+// let counter = 0;
+// for (let key in options){
+//     if (typeof(options[key]) === 'object'){
+//         for (let i in options[key]){
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//         counter++;
+//     }
+// }
+// console.log(counter);
+
+// Масссивы и псевдомассивы
+
+// const arr = [1, 2, 3, 6, 8];
+// console.log(arr.length);
+
+// arr.forEach(function(item, i, arr){   // caalback функция в работе с массивами
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// }); // в данном переборе нельзя использовать brake и continue 
+
+
+// arr.pop(); //Удаляеет послдений элемент массива
+// arr.push(10); //Добавляет последний элемент в массив, в скобках указывается 
+              // что именно добавляется
+
+// console.log(arr);
+
+// for (let value of arr){
+//     console.log(value);  перебор массива с помощью цикла for of
+// }
+
+// const str = prompt("", "");
+// const products = str.split(", "); //Формирует массив из строки
+// products.sort();
+// console.log(products.join('; ')); //формирует массив в строку
+
+// const arr = [34, 72, 43, 23, 71];
+// arr.sort(compareNum); // по умолчанию сортерует по возрастанию (по первым цифрам элемента) или по алфавиту
+// console.log(arr);
+
+// function compareNum(a, b){
+//     return a - b;           // функция коректирующая сортировку массива по возрастанию
+// }
+
+// Передача по ссылке или по значению, Spread оператор (ES6-ES9) 
+
+// let a = 5,
+//     b = a;
+
+//     b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj;  // изменяя копию изменяется основной объект, это ссылка на основной объект
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+// function copy(mainOnj){
+//     let objCopy = {};
+
+//     let key;
+//     for (key in mainOnj){
+//         objCopy[key] = mainOnj[key];
+//     }
+
+//     return(objCopy);
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+// // console.log(newNumbers);
+// // console.log(numbers);
+
+// const add = {
+//     d: 17,
+//     e: 20
+// };
+
+// const clone = Object.assign({}, add); // сетод копирования объекта
+
+// clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice(); // метод копирования массива
+
+// newArray[1] = 'dfagfsdv';
+
+// console.log(newArray);
+// console.log(oldArray);
+
+// const video = ['youtube', 'video', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk'];
+
+// console.log(internet);
+
+// function log(a, b, c){
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const num = [2, 5, 7];
+
+// log(...num);
+
+// const array = ["a", "b"];
+
+// const newAarray = [...array];
+
+// 1) Напишите функцию showExperience, которая будет принимать в себя объект со
+//  всеми данными и возвращать строку с опытом.
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
     }
-    return(fibonache);
+};
 
-
-    
+function showExperience(plan) {
+    console.log(plan.skills.exp);
 }
 
-console.log(fib(4));
+showExperience(personalPlanPeter);
 
-// let temperature = [8, 5, 3, 10, 12, 6, 5, -4, -7, -2, -7, -10];
-// let timesOfDay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+// 2) Напишите функцию showProgrammingLangs, которая будет принимать в себя объект 
+// со всеми данными и возвращать строку в нужном виде.
 
-// for (let i = 0; i < 12; i++){
-//     if (temperature[i] < 0){
-//         console.log(temperature[i] + ' ' + timesOfDay[i]);
-//         break;
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     }
+// };
+
+// function showExperience(plan) {
+//     const skills = plan.skills.programmingLangs;
+//     for (let key in skills){
+//         console.log(`Язык ${key} изучен на ${skills[key]}`);
+//         }
+// }
+
+// showExperience(personalPlanPeter);
+
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+// };
+
+// // options.makeTest();
+
+// const {border, bg} = options.colors;
+
+// console.log(border);
+
+// console.log(Object.keys(options).length);
+
+// console.log(options["colors"]["border"]);
+
+// delete options.name;
+
+// console.log(options);
+// for (let key in options){
+//     if (typeof(options[key]) === 'object'){
+//         for (let i in options[key]){
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
 //     }
 // }
