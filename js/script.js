@@ -1581,3 +1581,438 @@
 // }
 
 // console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
+//  Основы ООП, прототипно-ориентированное наследование
+// let str = "some";
+// let strObj = new String(str);
+
+// // console.log(typeof(str));
+// // console.log(typeof(strObj));
+
+// console.dir([1, 2, 3]);
+// const soldier = {
+//     health: 400,
+//     armor: 100
+// };
+
+// const jonh = Object.create(soldier);
+
+// // const jonh = {
+//     health: 100
+// };
+
+// jonh.__proto__ = soldier; устаревший код установки прототипа 
+
+// Object.setPrototypeOf(jonh, soldier); 
+
+// console.log(jonh.armor);
+
+//  Динамическая типизация в JS 
+// to string
+
+// 1)
+// console.log(typeof(String(null)));
+// // console.log(typeof(String(4)));
+
+// // 2) конкотинация 
+// console.log(typeof(5 + ''));
+
+// const num = 5;
+
+// console.log("https://vk.com/catalog/" + num);
+
+// const fontSize = 26 + 'px';
+
+// // to number 
+
+// // 1)
+// console.log(typeof(Number('4')));
+
+// // 2) 
+// console.log(typeof(+'5'));
+
+// // 3)
+// console.log(typeof(parseInt("15px", 10)));
+
+// let answ = +prompt("hello", "");
+
+// // to boolean 
+
+// // 0, '', null, undefined, NaN;  все то false 
+// let switcher = null;
+
+// switcher = 1;
+
+// if (switcher){
+//     console.log('working...');
+// }
+
+// // 2)
+// console.log(typeof(Boolean('4')));
+
+// // 3)
+// console.log(typeof(!!"2222"));
+
+// const restorantData = {
+//     menu: [
+//         {
+//             name: 'Salad Caesar',
+//             price: '14$'
+//         },
+//         {
+//             name: 'Pizza Diavola',
+//             price: '9$'
+//         },
+//         {
+//             name: 'Beefsteak',
+//             price: '17$'
+//         },
+//         {
+//             name: 'Napoleon',
+//             price: '7$'
+//         }
+//     ],
+//     waitors: [
+//         {name: 'Alice', age: 22}, {name: 'John', age: 24}
+//     ],
+//     averageLunchPrice: '20$',
+//     openNow: true
+// };
+
+// function isOpen(prop) {
+//     let answer = '';
+//     prop ? answer = 'Закрыто' : answer = 'Открыто';
+
+//     return answer;
+// }
+
+// console.log(isOpen(restorantData.openNow));
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//     if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+//         return 'Цена ниже средней';
+//     } else {
+//         return 'Цена выше средней';
+//     }
+// }
+
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+// function transferWaitors(data) {
+//     const copy = Object.assign({}, data);
+
+//     copy.waitors = [{name: 'Mike', age: 32}];
+//     return copy;
+// }
+
+// console.log(transferWaitors(restorantData));
+// console.log(restorantData);
+
+// console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
+
+// // console.log(document.querySelector('#current').parentNode.parentNode);
+// console.log(document.querySelector('#current').previousElementSibling);
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+
+// for (let node of document.body.childNodes){
+//     if (node.nodeName == '#text'){
+//         continue;
+//     }
+
+//     console.log(node);
+// }
+// function pow(x, n){
+//     let result = 1;
+
+//     for (let i = 0; i < n;i++){
+//         result *= x;
+//     }
+// //     return result;
+// // }
+
+// function pow(x, n){
+//     if(n === 1){
+//         return x;
+//     } else {
+//         return x * pow(x, n - 1);
+//     }
+// }
+// console.log(pow(2, 4));
+
+// // pow(2, 2);
+// // pow(2, 3);
+
+// let students = {
+//     js: [{
+//         name: 'john',
+//         progress: 100
+//     }, {
+//         name: 'Ivan',
+//         progress: 60
+//     }],
+
+//     html: {
+//         basic: [{
+//             name: 'Peter',
+//             progress: 20
+//         }, {
+//             name: 'Ann',
+//             progress: 18 
+//         }], 
+
+//         pro:[{
+//             name: 'Sam',
+//             progress: 10
+//         }],
+
+//         semi: {
+//             students: [{
+//                 name: 'test',
+//                 progress: 100
+//             }]
+//         }
+//     }
+// };
+
+// // function getTotalProgressByIteration(data){
+// //     let total = 0;
+// //     let students = 0;
+
+// //     for (let course of Object.values(data)){
+// //         if(Array.isArray(course)){
+// //             students += course.length;
+// //             for(let i = 0; i < course.length; i++){
+// //                 total += course[i].progress;
+// //             }
+// //         } else {
+// //                 for (let subCourse of Object.values(course)){
+// //                     students += subCourse.length;
+
+// //                     for(let i = 0; i < subCourse.length; i++){
+// //                         total += subCourse[i].progress;
+// //                 }
+// //           }
+// //     }
+// // }
+
+// //     return total / students;
+// // }
+
+// // console.log(getTotalProgressByIteration(students));
+
+// function getTotalProgressByRecursion(data){
+//     if(Array.isArray(data)){
+//         let total = 0;
+
+//         for(let i = 0; i < data.length; i++){
+//             total += data[i].progress;
+//         }
+
+//         return [total, data.length];
+//     } else {
+//         let total = [0, 0];
+//         for(let subData of Object.values(data)){
+//             const subDataArr = getTotalProgressByRecursion(subData);
+//             total[0] += subDataArr[0];
+//             total[1] += subDataArr[1];
+//         }
+
+//         return total;
+//     }
+// }
+
+// const result = getTotalProgressByRecursion(students);
+
+// console.log(result[0]/result[1]);
+
+// function factorial(n) {
+//     if(n === 1){
+//         return n;
+//     } else if (typeof(n) !== 'number' || n % 1 !== 0) {
+//         return ('Error');
+//     } else if (n <= 0){
+//         return (1);
+//     } else {
+//         return n * factorial(n - 1);
+//     }
+// }
+
+// console.log(factorial(3));
+
+// var string = "!(31310";
+// var number = +(string.match(/\d+/g));
+// console.log(typeof number);
+// console.log(number);
+
+// let nodeList = ['$20.00', '$35,000.00', '$6,000.00', '$510.00', '$1,747.92 to $2,497.86', '$1,325.00', '$1,100.00',
+//  '$405.00', '$949.99', '$790.00', '$903.22', '$912.00', '$1,299.00', '$1,644.68', '$1,849.99 to $2,699.95',
+//   '$3,999.00', '$7,500.00', '$730.00', '$999.99', '$1,720.97 to $2,499.15', '$981.77', '$7.30', '$1,001.00',
+//    '$1,600.00', '$1,699.00', '$913.03', '$895.00', '$995.00', '$975.00', '$1,046.00', '$1,200.00', '$6,500.00',
+//     '$5,400.00', '$3,999.00', '$5,500.00', '$875.00', '$610.00', '$800.00', '$850.00', '$1,436.40', '$1,144.82',
+//      '$1,429.46', '$1,292.20', '$1,217.93', '$1,804.36', '$850.00', '$1,450.00', '$1,487.00', '$1,828.73', '$1,319.08',
+//       '$690.00', '$899.00', '$1,213.05', '$1,395.93', '$650.00', '$850.00', '$310.00', '$499.99', '$1,502.74',
+//        '$1,254.51', '$1,599.99', '$1,579.00', '$2,000.00', '$2,600.00',
+//         '$1,804.36', '$2,100.00', '$8.52', '$2,999.00', '$7,000.00'];
+//         const itemBlok = document.querySelectorAll('.s-item__price');
+//         const itemLocation = document.querySelectorAll('.x-refine__main__list')[13];
+//         const checkString = itemLocation.querySelectorAll('.x-refine__select__svg');
+
+//         checkString.forEach((item) => {
+//             item.innerText = 'Грузия';
+//         });
+        
+// let arrPrice = [];
+
+// itemBlok.forEach((price, i) =>{
+//     arrPrice.push(price.innerText);
+// });
+//         function deleteTo(arrPrice){
+//             let deleteTo = [];
+//             for(let i = 0; i < arrPrice.length; i++){
+//                 // console.log(arrPrice[i].indexOf('to'));
+//                 if(arrPrice[i].indexOf('to') >= 1){
+//                     deleteTo.push(arrPrice[i].split('to')[0]);
+//                 } else {
+//                     deleteTo.push(arrPrice[i]);
+//                 }
+//             }
+//             return(deleteTo);
+//         }
+//     function deleteSymbol (arr){
+// let sortPrice = [];
+//         for (let i = 0; i < arr.length; i++){
+//             sortPrice.push(+arr[i].replace(/[^0-9]/g,""));
+//         }
+//         return (sortPrice);
+//     }
+//     function newArrSort (deleteSymbol){
+//         let averagePrice = 0;
+//                 for (let i = 0; i < deleteSymbol.length; i++){
+//                     averagePrice += deleteSymbol[i] / deleteSymbol.length;
+//                 }
+//                 return (Math.round(averagePrice));
+//             }
+
+//             for (let i = 0; i < deleteSymbol(arrPrice).length; i++){
+//                 if (deleteSymbol(deleteTo(arrPrice))[i] < newArrSort(deleteSymbol(deleteTo(arrPrice)))){
+//                     console.log('Ниже средней');
+//                     itemBlok[i].style.backgroundColor = 'green';
+//                 } else {
+//                     console.log('Выше стредней');
+//                     itemBlok[i].style.backgroundColor = 'red';
+//                 }
+//     }
+//     function deleteAdvBlock(){
+//         const adv = document.getElementById('google_ads_iframe_/79850875/ebay.gbh.search/keywords_0__container__');
+//         adv.remove();
+//     }
+
+// deleteAdvBlock();
+// console.log(deleteTo(arrPrice));
+// console.log(deleteSymbol(deleteTo(arrPrice)));
+// console.log(newArrSort(deleteSymbol(deleteTo(arrPrice))));
+// console.log(checkString);
+
+
+// // var s = 'http://www.сайт.ру/страница/подстраница_1+строка';
+// // s = s.split('+')[0];
+// // console.log(s);
+//         // 7708744707                дополнительное 
+//         // 531903384801
+//                 // arrPrice.splice(4, 1, "$1,747.92");
+//         // arrPrice.splice(14, 1, "$1,849.99");
+//         // arrPrice.splice(19, 1, "$1,720.97");
+        
+//         checkString.forEach((film, i) => {
+//             parent.innerHTML += `
+//             <li class="promo__interactive-item">${i + 1} ${film}
+//                 <div class="delete"></div>
+//             </li>
+//             `;
+//         });
+
+// Парсинг расписания коледжа
+// const list = document.querySelectorAll('.MsoPlainText');
+// console.log(list);
+// let parceList = [];
+// list.forEach((i)=>{
+//     parceList.push(i.innerText);
+// });
+// console.log(parceList);
+
+// let parceList = ['               РАСПИСАНИЕ НА               ', '            СУББОТУ     28.01.23г.         ', '┌────┬──┬──────────────────────────────────┐', '│    │  │                                  │', '│No  │No├──────────────┬───┬───────────────┤', '│гр. │ур│   Предмет    │Ауд│ Преподаватель │', '├────┼──┼──────────────┼───┼───────────────┤', '│ 71 │ 3│ОФЗ           │   │Авраменко Н.Н. │', '│    │  │ОФЗ           │   │Дубатовка О.А. │', '│    │ 4│ФКиЗ          │   │Авраменко Н.Н. │', '│    │  │ФКиЗ          │   │Дубатовка О.А. │', '├────┼──┼──────────────┼───┼───────────────┤', '│ 45 │ 1│Охрана труда  │262│Васько Е.Н.    │', '│    │ 2│Охрана труда  │262│Васько Е.Н.    │', '│    │ 3│Охрана труда  │262│Васько Е.Н.    │', '│    │ 4│Охрана труда  │262│Васько Е.Н.    │', '│    │ 5│МРС           │264│Рязанов В.А.   │', '│    │ 6│МРС           │264│Рязанов В.А.   │', '├────┼──┼──────────────┼───┼───────────────┤', ' ', '               РАСПИСАНИЕ НА               ', '            СУББОТУ     28.01.23г.         ', '┌────┬──┬──────────────────────────────────┐', '│    │  │                                  │', '│No  │No├──────────────┬───┬───────────────┤', '│гр. │ур│   Предмет    │Ауд│ Преподаватель │', '├────┼──┼──────────────┼───┼───────────────┤', '│ 61 │ 1│Ос.тех.маш.пр.│264│Рязанов В.А.   │', '│    │ 2│Ос.тех.маш.пр.│264│Рязанов В.А.   │', '│    │ 3│Ос.тех.маш.пр.│264│Рязанов В.А.   │', '│    │ 4│Ос.тех.маш.пр.│264│Рязанов В.А.   │', '│    │ 5│ФКиЗ          │   │Авраменко Н.Н. │', '│    │  │ФКиЗ          │   │Дубатовка О.А. │', '│    │ 6│ОФЗ           │   │Авраменко Н.Н. │', '│    │  │ОФЗ           │   │Дубатовка О.А. │', '├────┼──┼──────────────┼───┼───────────────┤', '│182 │ 1│М-В и осн.тех.│102│Каратай И.К.   │', '│    │ 2│М-В и осн.тех.│102│Каратай И.К.   │', '│    │ 3│М-В и осн.тех.│102│Каратай И.К.   │', '│    │ 4│М-В и осн.тех.│102│Каратай И.К.   │', '│    │ 5│Ос.техн.мех.  │262│Васько Е.Н.    │', '│    │ 6│Ос.техн.мех.  │262│Васько Е.Н.    │', '├────┼──┼──────────────┼───┼───────────────┤', '│ 81 │ 1│√             │   │               │', '│    │  │Англ.яз.в проф│246│Пермякова Н.Н. │', '│    │ 2│√             │   │               │', '│    │  │Англ.яз.в проф│246│Пермякова Н.Н. │', '│    │ 3│Сист.упр.обор.│265│Синица П.В.    │', '│    │ 4│Сист.упр.обор.│265│Синица П.В.    │', '│    │ 5│Сист.упр.обор.│265│Синица П.В.    │', '│    │ 6│Сист.упр.обор.│265│Синица П.В.    │', '├────┼──┼──────────────┼───┼───────────────┤', ' ', '               РАСПИСАНИЕ НА               ', '            СУББОТУ     28.01.23г.         ', '┌────┬──┬──────────────────────────────────┐', '│    │  │                                  │', '│No  │No├──────────────┬───┬───────────────┤', '│гр. │ур│   Предмет    │Ауд│ Преподаватель │', '├────┼──┼──────────────┼───┼───────────────┤', '│245з│ 1│ЭТ с ос.электр│260│Бондарев М.Б.  │', '│    │ 2│ЭТ с ос.электр│260│Бондарев М.Б.  │', '│    │ 3│ЭТ с ос.электр│260│Бондарев М.Б.  │', '│    │ 4│ЭТ с ос.электр│260│Бондарев М.Б.  │', '├────┼──┼──────────────┼───┼───────────────┤', '│145з│ 1│Над. и диагнос│261│Лукьяненко О.В.│', '│    │ 2│Над. и диагнос│261│Лукьяненко О.В.│', '│    │ 3│Инф.технологии│261│Лукьяненко О.В.│', '│    │ 4│Инф.технологии│261│Лукьяненко О.В.│', '│    │ 5│Над. и диагнос│261│Лукьяненко О.В.│', '│    │ 6│Над. и диагнос│261│Лукьяненко О.В.│', '├────┼──┼──────────────┼───┼───────────────┤', '│171з│ 3│Довр.мед.пом. │101│Перская Т.А.   │', '│    │ 4│Довр.мед.пом. │101│Перская Т.А.   │', '│    │ 5│Довр.мед.пом. │101│Перская Т.А.   │', '│    │ 6│Довр.мед.пом. │101│Перская Т.А.   │', '└────┴──┴──────────────┴───┴───────────────┘', ' ', ' ', ' ', '               РАСПИСАНИЕ НА               ', '            ПОНЕДЕЛЬНИК 30.01.23г.         ', '┌────┬──┬──────────────────────────────────┐', '│    │  │                                  │', '│No  │No├──────────────┬───┬───────────────┤', '│гр. │ур│   Предмет    │Ауд│ Преподаватель │', '├────┼──┼──────────────┼───┼───────────────┤', '│211 │ 1│Бел.язык      │205│Шелесная О.Н.  │', '│    │ 2│Бел.язык      │205│Шелесная О.Н.  │', '│    │ 3│Лiтаратура    │205│Шелесная О.Н.  │', '│    │ 4│Лiтаратура    │205│Шелесная О.Н.  │', '│    │ 5│Допуски       │101│Ключник Н.Н.   │', '│    │ 6│Допуски       │101│Ключник Н.Н.   │', '│    │ 7│Химия         │403│Понасенкова С.В│', '│    │ 8│Химия         │403│Понасенкова С.В│', '├────┼──┼──────────────┼───┼───────────────┤', ' ', '               РАСПИСАНИЕ НА               ', '            ПОНЕДЕЛЬНИК 30.01.23г.         ', '┌────┬──┬──────────────────────────────────┐'];
+
+
+// function sortArr(pL){
+//     let sortList = [];
+//     for (let i = 0; i < pL.length; i++){
+//         if (pL[i][7] === '1' || pL[i][7] === '2' || pL[i][7] === '3' || pL[i][7] === '4' || pL[i][7] === '5' || pL[i][7] === '6' || pL[i][7] === '7' || pL[i][7] === '8' || pL[i][7] === '9'){
+//             sortList.push(pL[i]);
+//         }
+// }
+// return(sortList);
+// }
+
+// function splitArr(sA){
+//     let elem = [];
+//     for (let i = 0; i < sA.length; i++) {
+//         elem.push(sA[i].split('│'));
+//     }
+//     return(elem);
+// }
+
+// function sortGroups(splA){
+//     let group71 = [];
+//     let group45 = [];
+//     let group61 = [];
+//     let group182 = [];
+//     let group81 = [];
+//     let group245z = [];
+//     let group145z = [];
+//     let group171z = [];
+//     let group211 = [];
+//     for (let i = 0; i < splA.length; i++){
+//         if(splA[i][1].includes(' 71')){
+//             group71.push(splA[i]);
+//             for (let j = i + 1; j < splA.length; j++){
+//                 if(splA[j][1].includes('    ')){
+//                     group71.push(splA[j]);
+//                 } else {
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+//     return(group71);
+    
+// }
+// console.log(sortGroups(splitArr(sortArr(parceList))));
+
+const now = new Date('2023-02-08');
+// new Date.parce('2023-02-08');
+
+console.log(now.setHours(18));
+console.log(now);
+
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDay());
+// console.log(now.getHours());
+// console.log(now.getUTCHours());
+
+// console.log(now.getTimezoneOffset());
+// console.log(now.getTime());
+
+let start = new Date();
+
+for (let i = 0; i < 100000; i++){
+    let some = i ** 3;
+}
+
+let end = new Date();
+
+alert(`цикл отработал за ${end - start} милисикунд`);
