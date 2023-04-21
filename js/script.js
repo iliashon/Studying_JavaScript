@@ -1992,12 +1992,12 @@
 // }
 // console.log(sortGroups(splitArr(sortArr(parceList))));
 
-const now = new Date('2023-02-08');
+// const now = new Date('2023-02-08');
 // new Date.parce('2023-02-08');
 
-console.log(now.setHours(18));
-console.log(now);
-
+// console.log(now.setHours(18));
+// console.log(now);
+// 
 // console.log(now.getFullYear());
 // console.log(now.getMonth());
 // console.log(now.getDay());
@@ -2007,12 +2007,87 @@ console.log(now);
 // console.log(now.getTimezoneOffset());
 // console.log(now.getTime());
 
-let start = new Date();
+// let start = new Date();
 
-for (let i = 0; i < 100000; i++){
-    let some = i ** 3;
+// for (let i = 0; i < 100000; i++){
+    // let some = i ** 3;
+// }
+
+// let end = new Date();
+
+// alert(`цикл отработал за ${end - start} милисикунд`);
+
+// function formatDuration (seconds) {
+//     let string = "";
+//     let time = {
+//         "year": Math.floor(seconds / (60 * 60 * 24 * 365)),
+//         "day": Math.floor(seconds / (60 * 60 * 24)),
+//         "hour": Math.floor((seconds / (60 * 60) % 60)),
+//         "minute": Math.floor((seconds / 60) % 60),
+//         "second": Math.floor(seconds % 60)
+//     };
+//     if(seconds <= 0){
+//         return ("now");
+//     } else {
+//         for (let key in time){
+//             if(time[key] > 0){
+//                 if(time[key] > 1){
+//                     string += `${time[key]} ${key += 's'}, `;
+//                 } else {
+//                     string += `${time[key]} ${key}, `;
+//                 }
+//             }
+//         }
+//     }
+
+//     return (string);
+//   }
+
+// console.log(formatDuration(3600));
+
+
+//         for (let key in time){
+//             if(time[key] > 0){
+//                 if(time[key] > 1){
+//                     string += `${time[key]} ${key += 's'}, `;
+//                 } else {
+//                     string += `${time[key]} ${key}, `;
+//                 }
+//             }
+//         }
+0 === 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(1 === '1');
+console.log(1 == '1');
+console.log(4 === 1 + 3);
+console.log('A' > 'a');
+console.log('B' < 'b');
+console.log('13' > 12);
+console.log('13px' > 12);
+
+// let rs = 'true'
+// console.log(typeof rs);
+// console.log(typeof 'true');
+
+'use strict';
+
+function getThis() {
+    return this;
 }
 
-let end = new Date();
-
-alert(`цикл отработал за ${end - start} милисикунд`);
+console.log(getThis());
